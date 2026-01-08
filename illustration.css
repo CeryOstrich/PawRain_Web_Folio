@@ -141,6 +141,21 @@ h2 {
     column-gap: 15px;
 }
 
+@media (max-width: 768px) {
+    .static-gallery {
+        columns: 1;
+        /* Single column on mobile */
+    }
+
+    #illustration h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        max-width: 95%;
+    }
+}
+
 .gallery-item {
     break-inside: avoid;
     margin-bottom: 15px;

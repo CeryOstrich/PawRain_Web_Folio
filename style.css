@@ -403,13 +403,35 @@ nav {
 
     .split-layout,
     .exhibition-item,
-    .split-layout-footer {
+    .split-layout-footer,
+    .footer-image {
         flex-direction: column;
+    }
+
+    .footer-image img {
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     .nav-links {
         display: none;
-        /* We rely on JS for menu, need to style mobile menu later */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 2px solid var(--text-main);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
     }
 
     .menu-btn {
@@ -417,8 +439,16 @@ nav {
     }
 
     .y2k-window {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .modal-content {
+        width: 95%;
     }
 }
 
