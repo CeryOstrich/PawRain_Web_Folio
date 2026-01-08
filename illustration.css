@@ -1,0 +1,227 @@
+/* Y2K Maximalist Design System (Imported Variables) */
+:root {
+    /* Color Palette */
+    --bg-color: #050510;
+    --window-bg: #c0c0c0;
+    --window-header: linear-gradient(90deg, #000080, #1084d0);
+    --text-main: #39ff14;
+    /* Neon Green */
+    --text-pink: #ff00ff;
+    --text-black: #000000;
+    --text-white: #ffffff;
+    --grid-line: rgba(57, 255, 20, 0.2);
+
+    /* Typography */
+    --font-heading: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill:lime"><path d="M0 0l12 12-4 2 6 6-3 3-6-6-2 4v-21z"/></svg>'), auto;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+    color: var(--text-white);
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Window Component */
+.y2k-window {
+    background: var(--window-bg);
+    border: 3px solid #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
+    color: var(--text-black);
+}
+
+.window-header {
+    background: var(--window-header);
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #404040;
+}
+
+.window-title {
+    color: white;
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.win-btn {
+    width: 20px;
+    height: 20px;
+    background: #c0c0c0;
+    border: 2px solid #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.window-content {
+    padding: 20px;
+    background: #e0e0e0;
+}
+
+/* Gallery Specifics */
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px dashed #000;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    color: #000;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 0px #fff;
+}
+
+.btn-clean {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: var(--text-main);
+    border: 2px solid var(--text-main);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    text-decoration: none;
+    box-shadow: 4px 4px 0px var(--text-pink);
+    transition: 0.1s;
+}
+
+.btn-clean:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--text-pink);
+    background: var(--text-pink);
+    color: white;
+}
+
+/* Masonry / Grid Gallery */
+.static-gallery {
+    columns: 3 300px;
+    column-gap: 15px;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 15px;
+    border: 3px solid #000;
+    background: #000;
+    padding: 5px;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02) rotate(-1deg);
+    z-index: 10;
+    box-shadow: 8px 8px 0px var(--text-pink);
+    border-color: var(--text-main);
+}
+
+.static-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #333;
+}
+
+/* Modal from style.css reuse (simplified) */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border: 2px solid var(--text-main);
+    box-shadow: 0 0 20px var(--text-main);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-heading);
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: var(--text-main);
+    padding: 10px 0;
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+}
+
+/* Animations included */
+.fade-in-up {
+    animation: fadeInUp 0.5s steps(5) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
