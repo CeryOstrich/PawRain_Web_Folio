@@ -142,18 +142,55 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
     .static-gallery {
         columns: 1;
         /* Single column on mobile */
+        column-gap: 0;
+    }
+
+    .gallery-item {
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     #illustration h2 {
         font-size: 1.5rem;
     }
 
-    .modal-content {
-        max-width: 95%;
+    .window-content {
+        padding: 10px;
     }
+
+    .window-title {
+        font-size: 0.9rem;
+    }
+
+    .gallery-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .back-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#illustration h2 {
+    font-size: 1.5rem;
+}
+
+.modal-content {
+    max-width: 95%;
+}
 }
 
 .gallery-item {
